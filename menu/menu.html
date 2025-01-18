@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title> Âm Thực Tâm Phương </title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        header {
+            background-color: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2em;
+            margin: 0;
+        }
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+        .menu-item {
+            background: #ffffff;
+            border: 2px solid #a5d6a7;
+            border-radius: 12px;
+            margin: 10px;
+            padding: 15px;
+            width: 280px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
+        .menu-item img {
+            max-width: 100%;
+            border-radius: 12px;
+        }
+        .menu-item h3 {
+            margin: 10px 0;
+            font-size: 22px;
+            color: #1b5e20;
+        }
+        .menu-item p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        .menu-item span.old-price {
+            text-decoration: line-through;
+            color: #000000; /* Màu đen cho giá cũ */
+            font-size: 16px;
+            margin-right: 5px;
+        }
+
+        .menu-item span.new-price {
+            color: #d32f2f; /* Màu đỏ cho giá mới */
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .menu-item span.arrow {
+            font-size: 18px;
+            color: #388e3c; /* Màu xanh cho mũi tên */
+            margin-left: 5px;
+                }
+        .menu-item .add-image {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #2e7d32;
+        }
+        .form-section {
+            background: #ffffff;
+            border: 2px solid #a5d6a7;
+            border-radius: 12px;
+            margin: 20px auto;
+            padding: 25px;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .form-section h2 {
+            text-align: center;
+            color: #1b5e20;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #c8e6c9;
+            border-radius: 6px;
+        }
+        .form-group button {
+            background-color: #2e7d32;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form-group button:hover {
+            background-color: #1b5e20;
+        }
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-left: 20px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            background-color: #f1f8e9;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .checkbox-item:hover {
+            transform: scale(1.05);
+            background-color: #a5d6a7;
+        }
+
+        .checkbox-item input {
+            margin-right: 10px;
+            accent-color: #388e3c;
+        }
+
+        .checkbox-item label {
+            font-size: 16px;
+            color: #388e3c;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .checkbox-item input:checked + label {
+            color: #1b5e20;
+            font-weight: 700;
+        }
+        .img-size {
+            width: 50px; height: 50px
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1b5e20;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Âm Thực Tầm Phương</h1>
+        <p>Thưởng thức hương vị độc đáo từ các món ăn của chúng tôi!</p>
+    </header>
+
+    <section class="menu">
+        <div class="menu-item">
+            <img src="gavien.png" alt="Gà Viên">
+            <img src="daucong.png" alt="Dấu cộng" class="img-size">
+            <img src="suabotuoitho.png" alt="Miền Kí Ức">
+            <h3>Combo 1</h3>
+            <p>Gà viên + Sữa bò tuổi thơ</p>
+            <span class="old-price">33K</span> <!-- Giá cũ -->
+            <span class="arrow">→</span>
+            <span class="new-price">30K</span> <!-- Giá mới -->
+        </div>
+
+        <div class="menu-item">
+            <img src="gavien.png" alt="Gà Viên">
+            <img src="daucong.png" alt="Dấu cộng" class="img-size">
+            <img src="duatac.png" alt="Mộng Xuân Duyên Hải">
+            <h3>Combo 2</h3>
+            <p>Gà viên + Dừa tắc</p>
+            <span class="old-price">37K</span> <!-- Giá cũ -->
+            <span class="arrow">→</span>
+            <span class="new-price">34k</span> <!-- Giá mới -->
+        </div>
+
+        <div class="menu-item">
+            <img src="gavien.png" alt="Gà Viên">
+            <img src="daucong.png" alt="Dấu cộng" class="img-size">
+            <img src="banhflan.png" alt="Núng Na Núng Nính">
+            <h3>Combo 3</h3>
+            <p>Gà viên + Bánh Flan (2 cái)</p>
+            <span class="old-price">39K</span> <!-- Giá cũ -->
+            <span class="arrow">→</span>
+            <span class="new-price">36K</span> <!-- Giá mới -->
+        </div>
+
+        <div class="menu-item">
+            <img src="mitron.png" alt="Hương Xuân Quyện Lối">
+            <img src="daucong.png" alt="Dấu cộng" class="img-size">
+            <img src="suabotuoitho.png" alt="Miền Kí Ức">
+            <h3>Combo 4</h3>
+            <p>Mì trộn gà viên + Sữa bò tuổi thơ</p>
+            <span class="old-price">38K</span> <!-- Giá cũ -->
+            <span class="arrow">→</span>
+            <span class="new-price">35K</span> <!-- Giá mới -->
+        </div>
+        <div class="menu-item">
+            <img src="mitron.png" alt="Hương Xuân Quyện Lối">
+            <img src="daucong.png" alt="Dấu cộng" class="img-size">
+            <img src="duatac.png" alt="Mộng Xuân Duyên Hải">
+            <h3>Combo 5</h3>
+            <p>Mì trộn gà viên + Dừa tắc</p>
+            <span class="old-price">42K</span> <!-- Giá cũ -->
+            <span class="arrow">→</span>
+            <span class="new-price">39K</span> <!-- Giá mới -->
+        </div>
+
+        <div class="menu-item">
+            <img src="mitron.png" alt="Hương Xuân Quyện Lối">
+            <img src="daucong.png" alt="Dấu cộng" class="img-size">
+            <img src="banhflan.png" alt="Núng Na Núng Nính">
+            <h3>Combo 6</h3>
+            <p>Mì trộn gà viên + Bánh Flan (2 cái)</p>
+            <span class="old-price">44K</span> <!-- Giá cũ -->
+            <span class="arrow">→</span>
+            <span class="new-price">41K</span> <!-- Giá mới -->
+        </div>
+    </section>
+    </section>
+
+    <section class="form-section">
+        <h2>Đặt Món Ngay</h2>
+        <form action="https://script.google.com/macros/s/AKfycbyVW-OhLao6Z712NRyTbeZJfNjeySmXDig6fpUSsqckPSu6jy4sGTkFespK1X-gtCKXRg/exec" method="GET">
+            <div class="form-group">
+                <label for="name">Họ và tên:</label>
+                <input type="text" id="hoten" name="hoten" required>
+            </div>
+            <div class="form-group">
+                <label for="class">Lớp:</label>
+                <input type="text" id="lop" name="lop" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Số điện thoại:</label>
+                <input type="text" id="sdt" name="sdt" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dish">Món ăn muốn đặt:</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="moclan" name="monan" value="Mộc Lan Xứ Hàn">
+                        <label for="moclan">Mộc Lan Xứ Hàn</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="phomai" name="monan" value="Phô Mai Tuyết Hoa">
+                        <label for="phomai">Phô Mai Tuyết Hoa</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="huongxuan" name="monan" value="Hương Xuân Quyến Lôi">
+                        <label for="huongxuan">Hương Xuân Quyện Lôi</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="mien" name="monan" value="Miến Lá Tre">
+                        <label for="mien">Miền kí ức</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="mongxuan" name="monan" value="Mộng Xuân Duyên Hải">
+                        <label for="mongxuan">Mộng Xuân Duyên Hải</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="nang" name="monan" value="Nũng Nà Nũng Nịu">
+                        <label for="nang">Núng Na Núng Nính</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="topping">Chọn vị cho gà:</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="radio" id="sothanquoc" name="viga" value="Sốt Hàn Quốc">
+                        <label for="sothanquoc">Sốt Hàn Quốc</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="radio" id="phomai" name="viga" value="Phô Mai">
+                        <label for="phomai"> Lắc Phô Mai</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="topping">Topping thêm cho mì:</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="gavien" name="topping" value="Gà viên ú ụ">
+                        <label for="gaviem">Gà viên ú ụ (10k)</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="longdao" name="topping" value="Lòng đào tan chảy">
+                        <label for="longdao">Lòng đào tan chảy (5k)</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="topmo" name="topping" value="Tốp mỡ rộp rộp">
+                        <label for="topmo">Tóp mỡ rộp rộp (5k)</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="notes">Ghi chú:</label>
+                <textarea id="ghichu" name="ghichu" rows="4" placeholder="Nhập thêm yêu cầu..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Gửi Đặt Món</button>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <p>Liên hệ với chúng tôi để đặt món: 0767619174</p>
+        <p>&copy; 12L1(22-25) Ẩm Thực Tầm Phương. Tất cả các quyền được bảo lưu.</p>
+    </footer>
+</body>
+</html>
